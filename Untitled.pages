@@ -1,0 +1,16 @@
+Building a Gem
+1. Plan it, imagine interface
+2. Start with the project structure
+3. Start wit the entry point
+4. force that to build the CLI interface
+5. stub out the interface
+6. start making things real
+7. discover objects
+8. program
+
+
+Arbitrage Finder
+user enters zip code
+pulls products with similar names from eBay and craigslist
+ask the user which ones he wants to compare
+subtract fees
