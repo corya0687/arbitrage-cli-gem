@@ -4,7 +4,7 @@ class Arbitrage::Product
   def initialize
     self.scraper = Arbitrage::Scraper.new
     self.scraper.product = self
-    self.validator = Arbitrage::CLI.validator
+    self.validator = Arbitrage::InputValidator.new
   end
 
   def get_product

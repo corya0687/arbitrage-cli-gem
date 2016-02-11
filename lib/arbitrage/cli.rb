@@ -5,7 +5,6 @@ class Arbitrage::CLI
   def initialize
     self.validator = Arbitrage::InputValidator.new
     self.product = Arbitrage::Product.new
-    self.product_name = product.name
   end
 
   def call
@@ -18,8 +17,7 @@ class Arbitrage::CLI
   def gross_profit
   #stub
     self.market_value = 330
-    binding.pry
-    self.market_value - self.product.local_price
+    self.market_value - 200
   end
 
 end
