@@ -1,16 +1,26 @@
 #CLI Controller
 class Arbitrage::CLI
-  attr_accessor :zipcode, :validator
+  attr_accessor :zipcode, :validator, :local_price, :market_value, :product
 
   def initialize
     self.validator = Arbitrage::InputValidator.new
+    self.product = Arbitrage::Product.new
   end
 
   def call
     puts "What's your zipcode?"
     get_zipcode
-    puts "Thank you, looking for Arbitrage opportunities in #{user_city_state}"
+    self.product.get_product_manually
+    puts "your potential profit on the sale of #{self.name} is $#{gross_profit}"
   end
+
+  def gross_profit
+  #stub
+    self.market_value = 330
+    binding.pry
+    self.market_value - self.product.local_price
+  end
+
 
   def get_zipcode
     zipcode = gets.chomp

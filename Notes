@@ -8,9 +8,24 @@ Building a Gem
 7. discover objects
 8. program
 
+Objects-
+CLI
+validator
+scraper
+product
+searcher
+
+
 
 Arbitrage Finder
-user enters zip code
-pulls products with similar names from eBay and craigslist
-ask the user which ones he wants to compare
-subtract fees
+1. user enters zip code
+2. user enters product name they want to sell
+3. searches for price on local craigslist or other local site.
+-- if found returns both item names and urls to product pages.
+And gives the gross_profit margin
+-- if target not found, returns the first gross_profit it finds
+and asks the user if they would like to try new search parameters
+close
+
+additional features-
+Arbitrage finder finds underpriced items and a profitable market
