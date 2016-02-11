@@ -10,9 +10,12 @@ class Arbitrage::Product
   def get_product
     puts "Enter the product you intend to sell"
     self.name = gets.chomp
+    product_list
   end
 
-  def create_product_from_craigslist
+  def product_list
+    self.scraper.create_url
+    self.scraper.create_product_list
   end
 
   def get_zipcode
