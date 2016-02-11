@@ -21,7 +21,8 @@ Arbitrage Finder
 1. user enters zip code
 2. user enters product name they want to sell
 3. searches for price on local craigslist or other local site.
--- if found returns both item names and urls to product pages.
+4. Searches recently sold of that item on ebay
+-- returns both item names and urls to product pages.
 And gives the gross_profit margin
 -- if target not found, returns the first gross_profit it finds
 and asks the user if they would like to try new search parameters
@@ -29,3 +30,6 @@ close
 
 additional features-
 Arbitrage finder finds underpriced items and a profitable market
+
+Log - Left off trying to connect Scraper to product which is connected to CLI.
+wanted to test url query by puts string in CLI.
