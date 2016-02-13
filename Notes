@@ -19,14 +19,13 @@ searcher
 
 Arbitrage Finder
 1. user enters zip code
-2. user enters product name they want to sell
-3. searches for price on local craigslist or other local site.
-4. Searches recently sold of that item on ebay
--- returns both item names and urls to product pages.
-And gives the gross_profit margin
--- if target not found, returns the first gross_profit it finds
-and asks the user if they would like to try new search parameters
-close
+2. User enters zipcode they want to buy in
+3. user enters the zip code they want to sell in
+4. Searches for buying opportunities on CL
+4a. Displays list to pick
+5. Searches for profit oppotunities using selection in selling zipcode
+6. Returns list of possible arbitrage.
+7. Enters which
 
 additional features-
 Arbitrage finder finds underpriced items and a profitable market
