@@ -14,8 +14,9 @@ class Arbitrage::Product
   end
 
   def product_list
-    self.scraper.create_url
+    self.scraper.create_index_url
     self.scraper.create_product_list
+
   end
 
   def get_zipcode
@@ -24,7 +25,20 @@ class Arbitrage::Product
       puts "Invalid zipcode, please enter zipcode"
       get_zipcode
     end
+    remove_0_from_zip(zipcode)
+  end
+
+  def remove_0_from_zip(zipcode)
+
+    zipcode = zipcode.split("")
+    if zipcode.first == "0"
+      zipcode.delete_at(0)
+      zipcode= zipcode.join
+      self.zipcode = zipcode
+    else
+      zipcode= zipcode.join
     self.zipcode = zipcode
+    end
   end
 
   def user_city_state
