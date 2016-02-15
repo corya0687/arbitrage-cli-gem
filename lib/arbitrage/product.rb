@@ -1,5 +1,5 @@
 class Arbitrage::Product
-  attr_accessor :name, :zipcode, :validator, :local_price, :scraper
+  attr_accessor :name, :zipcode, :validator, :price, :scraper, :cl_post
 
   def initialize
     self.scraper = Arbitrage::Scraper.new
@@ -11,12 +11,25 @@ class Arbitrage::Product
     puts "Enter the product you intend to sell"
     self.name = gets.chomp
     product_list
+    puts "Enter the number of the product you would like to research from the list above"
+    choose_product
+    show_arbitrage_opportunity
+  end
+
+  def choose_product
+    choice = gets.chomp
+    self.scraper.buy_options.each do |number, hash|
+      if choice == number
+        self.name = hash[:name]
+        self.price = hash[:price]
+        self.cl_post = hash[:url]
+      end
+    end
   end
 
   def product_list
     self.scraper.create_index_url
     self.scraper.create_product_list
-
   end
 
   def get_zipcode
@@ -28,8 +41,11 @@ class Arbitrage::Product
     remove_0_from_zip(zipcode)
   end
 
-  def remove_0_from_zip(zipcode)
+  def show_arbitrage_opportunity
+    nearby_cls = Arbitrage::NearbyCraigslists.new(self,self.scraper)
+  end
 
+  def remove_0_from_zip(zipcode)
     zipcode = zipcode.split("")
     if zipcode.first == "0"
       zipcode.delete_at(0)

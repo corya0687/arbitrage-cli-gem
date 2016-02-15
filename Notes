@@ -30,5 +30,4 @@ Arbitrage Finder
 additional features-
 Arbitrage finder finds underpriced items and a profitable market
 
-Log - Left off trying to connect Scraper to product which is connected to CLI.
-wanted to test url query by puts string in CLI.
+Log - Left off needing to connect url in nearby Craiglist, added to all array

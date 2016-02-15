@@ -9,16 +9,15 @@ class Arbitrage::Scraper
       if data[1] == self.product.zipcode
         self.url=data[0]
       end
-
     end
   end
 
   def create_product_list
-    craigslist_search_url
-    html = open(self.url)
+
+    html = open(craigslist_search_url)
     doc = Nokogiri::HTML(html)
     buy_options_menu(doc)
-
+    display_buy_options
   end
 
   def buy_options_menu(doc)
@@ -27,11 +26,17 @@ class Arbitrage::Scraper
       if i < 11
         self.buy_options["#{i+1}".to_s] = {
           name: (row.css('.hdrlnk').text),
-          price: (row.css('.l2 .price').text)
+          price: (row.css('.l2 .price').text),
+          url:"#{self.url}mod/#{(row.css('.pl a')[0]['data-id'])}.html"
         }
-        binding.pry
       end
     end
+  end
+
+  def display_buy_options
+      self.buy_options.each do |key, value|
+        puts "#{key}.#{value[:name]} for #{value[:price]}"
+      end
   end
 
   def craigslist_query
@@ -45,11 +50,7 @@ class Arbitrage::Scraper
 
   def craigslist_search_url
     #binding.pry
-    self.url = "#{self.url}search/sss?query=#{craigslist_query}&sort=rel"
+    "#{self.url}search/sss?query=#{craigslist_query}&sort=rel"
   end
-
-
-
-
 
 end
