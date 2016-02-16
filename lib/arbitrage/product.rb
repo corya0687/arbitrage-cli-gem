@@ -1,5 +1,5 @@
 class Arbitrage::Product
-  attr_accessor :name, :zipcode, :validator, :price, :scraper, :cl_post
+  attr_accessor :name, :zipcode, :validator, :price, :scraper, :cl_post, :query
 
   def initialize
     self.scraper = Arbitrage::Scraper.new

@@ -12,8 +12,8 @@ class Arbitrage::CLI
     puts "What's your zipcode?"
     self.product.get_zipcode
     self.product.get_product
-    self.profit.list_opportunities
-    puts "your potential profit on the sale of #{self.product.name} is $#{gross_profit}"
+    self.profit.list_opportunity
+    #puts "your potential profit on the sale of #{self.product.name} is $#{gross_profit}"
   end
 
   def gross_profit

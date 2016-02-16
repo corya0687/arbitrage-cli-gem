@@ -13,8 +13,7 @@ class Arbitrage::Scraper
   end
 
   def create_product_list
-
-    html = open(craigslist_search_url)
+    html = open(craigslist_search_url(self.url,craigslist_query))
     doc = Nokogiri::HTML(html)
     buy_options_menu(doc)
     display_buy_options
@@ -46,11 +45,11 @@ class Arbitrage::Scraper
     else
       query= query.join
     end
+    self.product.query = query
   end
 
-  def craigslist_search_url
-    #binding.pry
-    "#{self.url}search/sss?query=#{craigslist_query}&sort=rel"
+  def craigslist_search_url(url,query)
+    "#{url}search/sss?query=#{query}&sort=rel"
   end
 
 end
