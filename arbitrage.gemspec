@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["corya0687"]
   spec.email         = ["corya0687@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Finds profit opportunity on Craigslist}
+  spec.description   = %q{CLI Gem that compares the price of a product in your local craigslist market to ones neaby and returns a potential profit report}
+  spec.homepage      = "https://github.com/corya0687/arbitrage-cli-gem.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
