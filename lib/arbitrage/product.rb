@@ -13,6 +13,7 @@ class Arbitrage::Product
     product_list
     puts "Enter the number of the product you would like to research from the list above"
     choose_product
+    puts "Looking for places to sell for a profit at nearby Craiglists"
     show_arbitrage_opportunity
   end
 
@@ -25,6 +26,12 @@ class Arbitrage::Product
         self.cl_post = hash[:url]
       end
     end
+  end
+
+  def display_product_details
+    puts" Product Title- #{self.name = hash[:name]}"
+    puts "Buying Price- #{self.price = hash[:price]}"
+    puts "Where to Buy- #{self.cl_post = hash[:url]}"
   end
 
   def product_list
