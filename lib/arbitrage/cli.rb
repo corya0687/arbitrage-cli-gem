@@ -14,6 +14,7 @@ class Arbitrage::CLI
     self.product.get_product
     puts "Details on the product you've selected:"
     puts "______________________________________"
+    puts self.product.display_product_details
     puts "______________________________________"
     self.profit.list_opportunity
     #puts "your potential profit on the sale of #{self.product.name} is $#{gross_profit}"

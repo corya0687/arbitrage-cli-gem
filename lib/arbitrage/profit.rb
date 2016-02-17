@@ -11,10 +11,10 @@ class Arbitrage::Profit
 
   def list_opportunity
     self.nearby_cls.save_original_url
+    puts "Looking for places to sell for a profit at nearby Craiglists"
     self.nearby_cls.save_all_indexes
     puts "Profitable Selling Markets:"
-    puts""
-    puts"_____________________________"
+    puts"______________________________________"
     display_market_opportunity
   end
 
@@ -23,7 +23,7 @@ class Arbitrage::Profit
     compute_avg_market_price
     puts "Below Are markets you should sell your product in to make a profit."
     puts " $$$$$<--Markets-->$$$$$"
-    puts "____________________________________"
+    puts puts "------------------------------------------------------"
     display_market_avgs
   end
 
@@ -37,7 +37,7 @@ class Arbitrage::Profit
   end
 
     def avg_profit(price)
-      (price) - (self.product.price.to_i)
+      (price) - (self.product.price.scan(/\d/).join.to_i)
     end
 
 
