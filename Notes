@@ -23,7 +23,7 @@ Arbitrage Finder
 3. user enters the zip code they want to sell in
 4. Searches for buying opportunities on CL
 4a. Displays list to pick
-5. Searches for profit oppotunities using selection in selling zipcode
+5. Searches for profit opportunities using selection in selling zipcode
 6. Returns list of possible arbitrage.
 7. Enters which
 
