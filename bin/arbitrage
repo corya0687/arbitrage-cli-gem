@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-
-require_relative '../lib/arbitrage'
 require "bundler/setup"
+require "arbitrage"
+
 
 Arbitrage::CLI.new.call
