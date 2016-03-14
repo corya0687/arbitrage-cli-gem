@@ -1,6 +1,6 @@
-require 'pry'
-require 'open-uri'
-require 'require_all'
-require_relative "../lib/arbitrage/version.rb"
+require 'bundler'
 Bundler.require
+
+require 'open-uri'
+require_relative "../lib/arbitrage/version.rb"
 require_all 'lib'
